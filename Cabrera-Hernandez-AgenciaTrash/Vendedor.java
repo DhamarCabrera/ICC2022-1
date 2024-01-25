@@ -23,7 +23,7 @@ public class Vendedor {
      */
 
     public Vendedor (){
-	this.recibe = "Buenas tardes estimado cliente, sea usted bienvenido a la Agencia Trash, mi nombre es Nicolas Bourbaki pero puede llamarme Nico si así lo prefiere. Estoy aquí para ayudarle a encontrar el auto de sus sueños" + "\n" + "Enseguida le mostraré el catálogo de los autos que la Agencia Trash tiene disponibles para usted en esta sucursal.";
+	this.recibe = "Buenas tardes estimado cliente, sea usted bienvenido a la Agencia Trash, mi nombre es Nicolas Bourbaki pero puede llamarme Nico si así lo prefiere. Estoy aquí para cobrar el auto de sus sueños que ha encontrado en nuestra preciada Agencia Trash.";
 	this.venta = "¡El auto que ha elegido es perfecto!, es uno de mis favoritos, lo felicito por su excelente elección. En un momento le entregaré su ticket de compra, ¿Desea pagar con tarjeta o en efectivo?";
 	this.noventa = "Fue un placer antenderle, ojalá pueda regresar pronto a la Agencia Trash, la cual promete para usted nuevos modelos de autos que le facinen para adquirir en su siguiente visita." + "\n" + "Gracias por su tiempo ¡Esperamos verlo pronto!.";
 	this.ticket = "¡Ya está todo listo!, hago entrega de su ticket de compra no sin antes recordarle que la agencia Trash agradece su preferencia, esperamos que disfrute de su auto tanto como nosotros disfrutamos su presencia.";

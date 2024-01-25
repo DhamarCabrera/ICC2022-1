@@ -1,0 +1,137 @@
+/**
+ * Clase Comprador en donde se modela a un comprador de vehículos
+ * @author Asahel Main
+ * @version 1.0
+ */
+public class Comprador{
+    //El nombre del comprador
+    private String nombre;
+
+    //El dinero que el comprador tiene disponible
+    private double dinero;
+
+    //Los autos que tiene el comprador en su garaje
+    private Auto autos[];
+
+    //La cantidad de autos que caben en el garaje del comprador
+    private int cantidadDeAutos;
+
+    //El vendedor actual del comprador
+    private Vendedor vendedor;
+
+    //Debí nombrar a esta variable "cantidadDeAutos", pero ya es muy tarde para pensar en ello
+    private int autoActual;
+
+    
+    //Constructores
+
+    /**
+     * Constructor que recibe tres parametros
+     * @param nombre El nombre del comprador
+     * @param dinero El dinero disponible del comprador
+     * @param cantidadDeAutos La cantidad de autos que caben en el garaje
+     */
+    public Comprador(String nombre, double dinero, int cantidadDeAutos){
+	this.nombre = nombre;
+	this.dinero = dinero;
+	this.cantidadDeAutos = cantidadDeAutos;
+	autos = new Auto[cantidadDeAutos];
+	this.autoActual = 0;
+    }
+
+    /**
+     * Constructor con un parametro
+     * @param dinero El dinero disponible del comprador
+     * A nombre se le asigna "Desconocido"
+     * A cantidadDeAutos se le asigna 10
+     */
+    public Comprador(double dinero){
+	this("Desconocido", dinero, 10);
+    }
+
+
+
+    
+    //Getters
+
+    /**
+     * Metodo que devuelve el nombre del comprador
+     * @return El nombre del comprador
+     */
+    public String getNombre(){
+	return this.nombre;
+    }
+
+    /**
+     *Metodo que devuelve el dinero del comprador
+     * @return El dinero del comprador
+     */
+    public double getDinero(){
+	return this.dinero;
+    }
+
+    /**
+     * Metodo que devuelve la cantidad de autos que caben en el garaje del comprador
+     * @return La cantidad de autos que caben en el garaje del comprador
+     */
+    public int getCantidadGaraje(){
+	return this.cantidadDeAutos;
+    }
+
+    /**
+     * Metodo que devuelve el vendedor actual del comprador
+     * @return El vendedor actual
+     */
+    public Vendedor getVendedor(){
+	return this.vendedor;
+    }
+
+    
+    //Setters
+
+    /**
+     * Metodo que modifica el nombre del comprador
+     * @param nombre El nuevo nombre del comprador
+     */
+    public void setNombre(String nombre){
+	this.nombre = nombre;
+    }
+    /**
+     * Metodo que modifica la cantidad de dinero disponible 
+     * @param dinero El nuevo dinero disponible
+     */
+    public void setDinero(double dinero){
+	this.dinero = dinero;
+    }
+
+    /**
+     * Metodo que cambia el vendedor actual
+     * @param vendedor El nuevo vendedor
+     */
+    public void setVendedor(Vendedor vendedor){
+	this.vendedor = vendedor;
+    }
+    
+    //Más métodos
+
+    public void comprarAuto(Auto autoNuevo){
+	if(this.getDinero() >= autoNuevo.getPrecio()){
+	        this.setDinero(this.getDinero() - autoNuevo.getPrecio());
+		autoNuevo.setDisponibilidad(false);
+		autos[this.autoActual] = autoNuevo;
+		this.autoActual++;
+        }
+	  
+    }
+   
+    public void mostrarAutosEnPosesion(){
+	System.out.println("Los autos que tiene " + this.getNombre() + " son:");
+	for(int i = 0; i<autoActual; i++){
+	    System.out.println("\t Auto: " +(i+1) +": "  + autos[i].getModelo());
+	}
+;
+    }
+
+   
+    
+}

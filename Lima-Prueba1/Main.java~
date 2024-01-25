@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+/**
+ *Clase principal (Agencia)
+ */
+
+
+public class Main{
+    public static void main(String[] args){
+	Scanner sh = new Scanner(System.in);
+
+	//Coches
+	Auto coche1 = new Auto("LAMBORGHINI","V10","Huracán",1545,2017,200000);
+	
+
+	//Vendedores
+	Vendedor Badbunny = new Vendedor("Bad Bunny (1)","Estoy pa darte lo que tu me ordenes!");
+	
+	
+
+	//Da las opciones del programa
+	System.out.println("Agencia de coches bonitos para impresionar a tu crush");
+	System.out.println("Si usted es un comprador, digite 1");
+	System.out.println("Si usted es un vendedor, digite 2");
+	int Op = sh.nextInt();
+
+	// Inicia el menu de opciones
+	switch(Op){
+
+	    //Caso comprador
+	case 1: System.out.println("Cual es su nombre?");
+	    Scanner sh1 = new Scanner(System.in);
+	    String nombre = sh1.nextLine();
+	    System.out.println("Cuanto dinero piensa invertir en su nuevo auto?");
+	    int dinero = sh1.nextInt();
+	    Comprador SSS1 = new Comprador(nombre,dinero);
+	    System.out.println("A que vendedor desea solicitarle informes?");
+	    Badbunny.mostrarNombre();
+	    int Op2 = sh1.nextInt();
+
+	    switch(Op2){
+	    case 1: Badbunny.Frase1();
+		break;
+	    default: System.out.println("Holis");
+		break;
+	    }
+
+
+
+	    //Caso Vendedor
+	case 2: System.out.println("Que desea hacer?");
+	    break;
+
+	    //Caso por default
+	default: System.out.println("Esta no era una opcion, ves por que no impresionas a tu crush?");
+	}
+
+        
+	
+	
+    }
+}

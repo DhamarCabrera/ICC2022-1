@@ -3,6 +3,7 @@
  * 
  * @author Melissa Fernandez
  * @author Jose Pablo Granados
+ * @version 1.0
  */
 public class Auto {
 
@@ -17,13 +18,44 @@ public class Auto {
      * Metodo constructor sin parametros
      */
     public Auto() {
-        marca = "Sin marca";
-        modelo = "Sin mmodelo";
-        tipoAuto = "Sin tipo";
-        color = "Blanco";
+        marca = "";
+        modelo = "";
+        tipoAuto = "";
+        color = "";
         nuevo = true;
         costo = 300000;
 
+    }
+
+    /**
+     * Metodo constructor que recibe la marca
+     * 
+     * @param marca La marca de la agencia
+     */
+    public Auto(String marca) {
+        this.marca = marca;
+        modelo = "";
+        tipoAuto = "";
+        color = "";
+        nuevo = true;
+        costo = 300000;
+    }
+
+    /**
+     * Metodo constructor que recibe marca, modelo, tipo y color de auto
+     * 
+     * @param marca  La marca del auto
+     * @param modelo El modelo del auto
+     * @param tipo   El tipo de auto (de lujo, deportivo, mediano)
+     * @param color  El color del auto
+     */
+    public Auto(String marca, String modelo, String tipo, String color) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        tipoAuto = tipo;
+        nuevo = true;
+        costo = 300000;
     }
 
     /**
@@ -141,8 +173,8 @@ public class Auto {
      * @return La representación del auto en forma de cadena
      */
     public String toString() {
-        return "El auto es " + tipoAuto + " de la marca " + marca + " modelo " + modelo + " color " + color
-                + " y su precio es de " + costo;
+        return "\nEl auto es " + tipoAuto + " de la marca \"" + marca + "\", modelo " + modelo + ", color " + color
+                + " y su precio es de $" + costo;
     }
 
 }
